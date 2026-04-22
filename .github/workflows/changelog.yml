@@ -1,0 +1,14 @@
+name: Test Changelog
+on: [push]
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: Braydon2001/changelog-action@v1.0.0
+        with:
+          api-key: ${{ secrets.CHANGELOG_API_KEY }}
